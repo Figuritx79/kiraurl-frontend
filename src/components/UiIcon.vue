@@ -1,0 +1,64 @@
+<script setup lang="ts">
+const props = withDefaults(defineProps<{ name: string; size?: number }>(), { size: 20 })
+</script>
+
+<template>
+  <svg
+    :width="props.size"
+    :height="props.size"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    vector-effect="non-scaling-stroke"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <template v-if="props.name === 'link'">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+    </template>
+
+    <template v-else-if="props.name === 'arrow-right'">
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
+    </template>
+
+    <template v-else-if="props.name === 'arrow-up-right'">
+      <path d="M7 17 17 7" />
+      <path d="M7 7h10v10" />
+    </template>
+
+    <template v-else-if="props.name === 'check'">
+      <path d="M20 6 9 17l-5-5" />
+    </template>
+
+    <template v-else-if="props.name === 'clipboard'">
+      <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+      <rect x="8" y="2" width="8" height="4" rx="1" />
+    </template>
+
+    <template v-else-if="props.name === 'send'">
+      <path d="m22 2-7 20-4-9-9-4Z" />
+      <path d="M22 2 11 13" />
+    </template>
+
+    <template v-else-if="props.name === 'plus'">
+      <path d="M5 12h14" />
+      <path d="M12 5v14" />
+    </template>
+
+    <template v-else-if="props.name === 'minus'">
+      <path d="M5 12h14" />
+    </template>
+
+    <template v-else-if="props.name === 'github'">
+      <path
+        d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+      />
+      <path d="M9 18c-4.51 2-5-2-7-2" />
+    </template>
+  </svg>
+</template>
